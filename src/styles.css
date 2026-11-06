@@ -1,0 +1,159 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — "Cyber Lab"
+ * Dark cybersecurity theme: deep midnight navy surfaces, cyan neon
+ * primary, amber accent for warnings, green for success.
+ * All colors are oklch semantic tokens; components must never hardcode colors.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: "Cairo", "Segoe UI", system-ui, sans-serif;
+  --font-latin: "Space Grotesk", "Cairo", monospace;
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.16 0.035 258);
+  --foreground: oklch(0.95 0.012 220);
+  --card: oklch(0.205 0.042 258);
+  --card-foreground: oklch(0.95 0.012 220);
+  --popover: oklch(0.205 0.042 258);
+  --popover-foreground: oklch(0.95 0.012 220);
+  --primary: oklch(0.84 0.14 195);
+  --primary-foreground: oklch(0.16 0.035 258);
+  --secondary: oklch(0.26 0.05 262);
+  --secondary-foreground: oklch(0.95 0.012 220);
+  --muted: oklch(0.24 0.045 262);
+  --muted-foreground: oklch(0.72 0.035 245);
+  --accent: oklch(0.83 0.14 82);
+  --accent-foreground: oklch(0.2 0.05 70);
+  --destructive: oklch(0.66 0.2 25);
+  --destructive-foreground: oklch(0.98 0.005 25);
+  --success: oklch(0.76 0.16 160);
+  --success-foreground: oklch(0.16 0.035 258);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.84 0.14 195 / 60%);
+
+  /* Gradients & glows (referenced by utilities below) */
+  --gradient-hero:
+    radial-gradient(ellipse 80% 60% at 70% -10%, oklch(0.5 0.11 200 / 35%), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 110%, oklch(0.45 0.1 165 / 22%), transparent 60%);
+  --gradient-primary: linear-gradient(135deg, oklch(0.84 0.14 195), oklch(0.72 0.15 165));
+  --shadow-glow: 0 0 24px oklch(0.84 0.14 195 / 22%);
+  --shadow-card: 0 12px 40px -18px oklch(0 0 0 / 65%);
+}
+
+.dark {
+  --background: oklch(0.16 0.035 258);
+  --foreground: oklch(0.95 0.012 220);
+  --card: oklch(0.205 0.042 258);
+  --card-foreground: oklch(0.95 0.012 220);
+  --popover: oklch(0.205 0.042 258);
+  --popover-foreground: oklch(0.95 0.012 220);
+  --primary: oklch(0.84 0.14 195);
+  --primary-foreground: oklch(0.16 0.035 258);
+  --secondary: oklch(0.26 0.05 262);
+  --secondary-foreground: oklch(0.95 0.012 220);
+  --muted: oklch(0.24 0.045 262);
+  --muted-foreground: oklch(0.72 0.035 245);
+  --accent: oklch(0.83 0.14 82);
+  --accent-foreground: oklch(0.2 0.05 70);
+  --destructive: oklch(0.66 0.2 25);
+  --destructive-foreground: oklch(0.98 0.005 25);
+  --success: oklch(0.76 0.16 160);
+  --success-foreground: oklch(0.16 0.035 258);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.84 0.14 195 / 60%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+}
+
+@utility font-latin {
+  font-family: var(--font-latin);
+}
+
+/* Soft dotted grid used behind hero & section headers */
+@utility cyber-grid {
+  background-image:
+    linear-gradient(oklch(1 0 0 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 4%) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 75% 75% at 50% 30%, black 40%, transparent 100%);
+}
+
+@utility hero-glow {
+  background-image: var(--gradient-hero);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 28px oklch(0.84 0.14 195 / 45%);
+}
+
+@utility panel {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-card);
+}
+
+@utility panel-hover {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
