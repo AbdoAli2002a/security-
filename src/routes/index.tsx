@@ -17,6 +17,7 @@ import {
   Code2,
   ShieldCheck,
   BrainCircuit,
+  AlertTriangle,
 } from "lucide-react";
 import { lessons } from "@/content/lessons";
 import { LessonIcon } from "@/components/lesson-icon";
@@ -92,6 +93,19 @@ const tools = [
 
 const features = [
   {
+    to: "/digital-twin",
+    title: "التوأم الرقمي والوكيل الذكي",
+    desc: "نموذج إدراكي افتراضي يحاكي مهاراتك ومناعتك السيبرانية، مع وكيل ذكي تربوي (د. سايبر) يحلل فجواتك ويوجهك لحظياً.",
+    Icon: BrainCircuit,
+    highlight: true,
+  },
+  {
+    to: "/scenarios",
+    title: "سيناريوهات ومشكلات واقعية",
+    desc: "30 واقعة أمنية وحادثة عملية من بينها 14 سيناريو تخصصي لقسم تكنولوجيا التعليم، مع تحليل فوري وروابط للمحاكيات.",
+    Icon: AlertTriangle,
+  },
+  {
     to: "/activities",
     title: "الأنشطة التطبيقية",
     desc: "خطوات عملية تفاعلية: اختبر كلمة مرور، اضبط صلاحيات ملف، وأنشئ قاعدة جدار ناري — علّم كل خطوة بعد تطبيقها.",
@@ -99,8 +113,8 @@ const features = [
   },
   {
     to: "/quiz",
-    title: "اختبار المعرفة",
-    desc: "20 سؤالًا متنوعًا يغطي كل دروس الملف، مع شرح للإجابة الصحيحة بعد كل سؤال ونتيجة نهائية.",
+    title: "اختبار المعرفة والبروتوكولات",
+    desc: "اختبارات تفاعلية تغطي بروتوكولات الأمان والشبكات مع شريط تقدم مباشر، وتحليل فوري للإجابات.",
     Icon: PlayCircle,
   },
   {
@@ -141,8 +155,22 @@ function Home() {
                 <ArrowLeft className="size-4" />
               </Link>
               <Link
+                to="/digital-twin"
+                className="inline-flex items-center gap-2 rounded-xl border border-primary/50 bg-primary/15 px-5 py-3 text-sm font-extrabold text-primary transition-all hover:bg-primary/25 shadow-md"
+              >
+                <BrainCircuit className="size-4" />
+                التوأم والوكيل الذكي
+              </Link>
+              <Link
+                to="/scenarios"
+                className="inline-flex items-center gap-2 rounded-xl border border-amber-500/40 bg-amber-500/10 px-5 py-3 text-sm font-extrabold text-amber-300 transition-colors hover:bg-amber-500/20"
+              >
+                <AlertTriangle className="size-4" />
+                سيناريوهات ومشكلات واقعية
+              </Link>
+              <Link
                 to="/quiz"
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-extrabold transition-colors hover:bg-secondary"
+                className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-extrabold transition-colors hover:bg-secondary"
               >
                 <PlayCircle className="size-4 text-primary" />
                 اختبر معلوماتك
