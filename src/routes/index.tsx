@@ -49,6 +49,13 @@ export const Route = createFileRoute("/")({
 
 const tools = [
   {
+    name: "Kaspersky Rescue",
+    en: "Rescue Disk ISO",
+    fn: "أسطوانة إنقاذ إقلاعية: فحص قطاعات الإقلاع MBR ومحرر ريجستري مستقل",
+    Icon: ShieldCheck,
+    href: "/kaspersky",
+  },
+  {
     name: "Avast",
     en: "Antivirus",
     fn: "مضاد فيروسات: فحص سريع وشامل مع الحجز والإصلاح",

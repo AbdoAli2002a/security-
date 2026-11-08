@@ -250,6 +250,38 @@ function Activities() {
           </div>
         </div>
 
+        {/* كارت محاكي Kaspersky Rescue Disk ISO التفاعلي */}
+        <div className="panel mt-4 p-6 md:p-8 border-emerald-500/30 bg-gradient-to-r from-emerald-950/20 via-card to-card">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-3.5">
+              <span className="flex size-12 items-center justify-center rounded-2xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 shadow-md">
+                <ShieldCheck className="size-6 text-emerald-500" />
+              </span>
+              <div>
+                <span className="rounded-md bg-emerald-600/20 px-2 py-0.5 text-[11px] font-bold text-emerald-400">
+                  أسطوانة الإنقاذ الشاملة (ISO)
+                </span>
+                <h2 className="mt-1 text-xl font-extrabold text-white">
+                  محاكي أسطوانة الإنقاذ Kaspersky Rescue Disk
+                </h2>
+                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                  بيئة إقلاع حية (Gentoo Linux) لتطهير الحواسيب المعطلة: فحص قطاعات الإقلاع MBR،
+                  محرر الريجستري المستقل لإصلاح قفل الشاشة والفدية، ومستكشف إنقاذ الملفات ومحطة
+                  الأوامر.
+                </p>
+              </div>
+            </div>
+
+            <Link
+              to="/kaspersky"
+              className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-xs md:text-sm font-extrabold text-white shadow-lg shadow-emerald-600/25 transition-transform hover:scale-105"
+            >
+              تشغيل أسطوانة الإنقاذ الآن
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+
         {/* مختبر كلمة المرور */}
         <PasswordLab />
 
