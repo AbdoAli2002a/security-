@@ -50,6 +50,30 @@ function AvastSimulatorPage() {
             والكامل، ومارس الإجراءات الثلاثة الأساسية عند اكتشاف الفيروسات (الحجز في Virus Chest،
             الإصلاح، أو الحذف النهائي)، واكتشف أدوات الحماية المتقدمة مثل صندوق الرمل (Sandbox).
           </p>
+
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-orange-500/40 bg-gradient-to-r from-orange-950/30 via-card to-card p-4">
+            <div className="flex items-center gap-3">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-orange-600/20 text-orange-400 border border-orange-500/30">
+                <ShieldCheck className="size-5 text-orange-500" />
+              </span>
+              <div>
+                <span className="block text-xs font-bold text-foreground">
+                  هل نظام الويندوز لديك معطل ولا يستجيب للإقلاع بسبب Rootkit؟
+                </span>
+                <span className="text-[11px] text-muted-foreground">
+                  جرّب الآن أسطوانة الإنقاذ الإقلاعية Avast Rescue Disk (ISO) للتطهير من خارج
+                  النظام.
+                </span>
+              </div>
+            </div>
+            <Link
+              to="/avast-rescue"
+              className="inline-flex items-center gap-2 rounded-xl bg-orange-600 px-4 py-2 text-xs font-black text-white hover:bg-orange-500 transition-colors shadow-md"
+            >
+              <span>فتح أسطوانة Avast Rescue (ISO)</span>
+              <ArrowRight className="size-3.5 rotate-180" />
+            </Link>
+          </div>
         </div>
       </div>
 

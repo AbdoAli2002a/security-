@@ -7,6 +7,7 @@ const links = [
   { to: "/lessons", label: "الدروس" },
   { to: "/scenarios", label: "سيناريوهات ومشكلات" },
   { to: "/digital-twin", label: "التوأم والوكيل الذكي", highlight: true },
+  { to: "/avast-rescue", label: "أسطوانة Avast Rescue" },
   { to: "/kaspersky", label: "محاكي Kaspersky" },
   { to: "/avast", label: "محاكي Avast" },
   { to: "/comodo", label: "محاكي Comodo" },

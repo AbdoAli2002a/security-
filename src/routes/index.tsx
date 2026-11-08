@@ -16,6 +16,7 @@ import {
   Cpu,
   Code2,
   ShieldCheck,
+  ShieldAlert,
   BrainCircuit,
   AlertTriangle,
 } from "lucide-react";
@@ -54,6 +55,13 @@ const tools = [
     fn: "أسطوانة إنقاذ إقلاعية: فحص قطاعات الإقلاع MBR ومحرر ريجستري مستقل",
     Icon: ShieldCheck,
     href: "/kaspersky",
+  },
+  {
+    name: "Avast Rescue",
+    en: "Rescue Disk ISO",
+    fn: "أسطوانة إنقاذ إقلاعية: بيئة WinPE لتطهير الـ Rootkits وإصلاح قطاع الإقلاع MBR",
+    Icon: ShieldAlert,
+    href: "/avast-rescue",
   },
   {
     name: "Avast",

@@ -4,6 +4,7 @@ import { lessons } from "@/content/lessons";
 import { LessonBlocks } from "@/components/lesson-blocks";
 import { LessonIcon } from "@/components/lesson-icon";
 import { LessonQa } from "@/components/lesson-qa";
+import { ComodoLessonGuide } from "@/components/comodo-lesson-guide";
 
 export const Route = createFileRoute("/lessons/$slug")({
   loader: ({ params }) => {
@@ -91,31 +92,7 @@ function LessonPage() {
         </div>
       )}
 
-      {lesson.slug === "comodo-firewall" && (
-        <div className="mb-8 panel p-6 border-red-500/40 bg-gradient-to-r from-red-950/30 via-card to-card">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <span className="rounded-md bg-red-600/20 px-2.5 py-0.5 text-xs font-bold text-red-400">
-                مختبر جدار ناري تفاعلي
-              </span>
-              <h2 className="mt-2 text-xl font-black text-white">
-                جرّب محاكي الجدار الناري COMODO Firewall
-              </h2>
-              <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                أنشئ قواعد منع المنافذ بنفسك، وتحكم في قواعد التطبيقات، واختبر مستويات الحماية (Safe
-                Mode, Training, Block All)، وصد هجمات مسح المنافذ.
-              </p>
-            </div>
-            <Link
-              to="/comodo"
-              className="inline-flex items-center gap-2 rounded-xl bg-red-600 px-5 py-2.5 text-xs font-extrabold text-white shadow-lg shadow-red-600/30 hover:bg-red-500 transition-transform hover:scale-105"
-            >
-              فتح محاكي COMODO الآن
-              <ArrowLeft className="size-4" />
-            </Link>
-          </div>
-        </div>
-      )}
+      {lesson.slug === "comodo-firewall" && <ComodoLessonGuide />}
 
       <article className="space-y-2">
         <LessonBlocks blocks={lesson.blocks} />
